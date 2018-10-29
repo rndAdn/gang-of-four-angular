@@ -1,0 +1,22 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        In Progress Game
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+    <app-list-game-with-player [user]="currentUser"></app-list-game-with-player>
+    </ng-template>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Joinable Game
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+      <app-list-opened-game [user]="currentUser"></app-list-opened-game>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>

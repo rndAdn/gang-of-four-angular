@@ -1,0 +1,27 @@
+<mat-card class="player-mat-card" fxFlexFill *ngIf="currentplayer">
+  <mat-card-header *ngIf="nextPlayerId===currentplayer.id" [style.backgroundColor]="'green'">
+    <div mat-card-avatar class="player-mat-card-avatar"></div>
+    <mat-card-title>{{currentplayer.userName}}</mat-card-title>
+    <img mat-card-avatar src="{{currentplayer.profilePicture}}">
+    <mat-card-subtitle>card left {{currentplayer.cardLeft}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-header *ngIf="nextPlayerId!==currentplayer.id" >
+    <div mat-card-avatar class="player-mat-card-avatar"></div>
+    <mat-card-title>{{currentplayer.userName}}</mat-card-title>
+    <img mat-card-avatar src="{{currentplayer.profilePicture}}">
+    <mat-card-subtitle>card left {{currentplayer.cardLeft}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+
+      <li  *ngFor="let card of cards" class='player-card'>
+        <app-card [card]="card"></app-card>
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="playCards()">Play</button>
+    <button mat-raised-button (click)="passTurn()">Pass</button>
+  </mat-card-actions>
+</mat-card>

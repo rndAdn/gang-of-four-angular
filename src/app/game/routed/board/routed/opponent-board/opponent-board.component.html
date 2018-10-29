@@ -1,0 +1,35 @@
+<mat-card class="example-card" fxFlexFill *ngIf="opponent">
+
+
+  <mat-card-header *ngIf="nextPlayerId===opponent.id" [style.backgroundColor]="'green'">
+    <div mat-card-avatar class="player-card"></div>
+    <mat-card-title>{{opponent.userName}}</mat-card-title>
+    <img mat-card-avatar src="{{opponent.profilePicture}}">
+    <mat-card-subtitle>card left {{opponent.cardLeft}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-header *ngIf="nextPlayerId!==opponent.id" >
+    <div mat-card-avatar class="player-card"></div>
+    <mat-card-title>{{opponent.userName}}</mat-card-title>
+    <img mat-card-avatar src="{{opponent.profilePicture}}">
+    <mat-card-subtitle>card left {{opponent.cardLeft}}</mat-card-subtitle>
+  </mat-card-header>
+
+
+
+  <mat-card-content>
+    <div>
+    <ul>
+      <div *ngIf="rorate">
+      <li  *ngFor="let card of cards" class='player-card-rotate'>
+        <div><img [src]="card.image" height="150px" width="auto" class="card-img-rotate"></div>
+      </li>
+      </div>
+      <div *ngIf="!rorate">
+        <li  *ngFor="let card of cards" class='player-card'>
+          <div ><img [src]="card.image" height="150px" width="auto" class="card-img="></div>
+        </li>
+      </div>
+    </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

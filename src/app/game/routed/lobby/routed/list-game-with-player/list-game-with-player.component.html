@@ -1,0 +1,5 @@
+<div class="container">
+  <div *ngIf="undefined === gamesWithPlayer">Loading...</div>
+  <app-list-game-item *ngFor="let game of gamesWithPlayer" [game]="game" [playable]="true"></app-list-game-item>
+  <button mat-raised-button color="accent" (click)="creatnewGame()">Create new game</button>
+</div>

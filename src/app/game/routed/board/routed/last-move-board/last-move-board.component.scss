@@ -1,0 +1,14 @@
+.player-card {
+  display: inline-block;
+}
+
+.card-img-rotate{
+  position: relative;
+  transform: rotate(90deg);
+}
+
+mat-card{
+  width: calc(100% - 01px);
+  height: calc(100% - 70px);
+  /*box-sizing: border-box;*/
+}

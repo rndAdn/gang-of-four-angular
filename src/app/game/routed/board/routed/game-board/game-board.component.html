@@ -1,0 +1,33 @@
+<div *ngIf="!winner; else Winner">
+  <mat-grid-list cols="7" rowHeight="8:10">
+    <mat-grid-tile [colspan]="1" [rowspan]="3" [style.background]="'#00eaf4'">
+      <app-opponent-board [opponentObservable]="getPlayer2()" [rorate]="true"
+                          [nextPlayerIdObservable]="nextPlayerId"></app-opponent-board>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="5" [rowspan]="1" [style.background]="'#f400c9'">
+      <app-opponent-board [opponentObservable]="getPlayer3()"
+                          [nextPlayerIdObservable]="nextPlayerId"></app-opponent-board>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="3" [style.background]="'#f44a41'">
+      <app-opponent-board [opponentObservable]="getPlayer4()" [rorate]="true"
+                          [nextPlayerIdObservable]="nextPlayerId"></app-opponent-board>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="5" [rowspan]="1" [style.background]="'#8841f4'">
+      <app-last-move-board [moveObserver]="getLastMove()"></app-last-move-board>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="5" [rowspan]="1" [style.background]="'#2cf432'">
+      <app-player-board [currentplayerObserver]="getPlayer1()"
+                        [nextPlayerIdObservable]="nextPlayerId"></app-player-board>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<ng-template #Winner>
+  <mat-card>
+    <mat-card-header >
+      <div mat-card-avatar class="player-mat-card-avatar"></div>
+      <mat-card-title>WINNER !! {{winner.userName}}</mat-card-title>
+      <img mat-card-avatar src="{{winner.profilePicture}}">
+    </mat-card-header>
+  </mat-card>
+</ng-template>

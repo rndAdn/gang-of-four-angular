@@ -1,0 +1,4 @@
+<div class="container">
+  <div *ngIf="undefined === openedGames">Loading...</div>
+  <app-list-game-item *ngFor="let game of openedGames" [game]="game" [joinable]="true"></app-list-game-item>
+</div>

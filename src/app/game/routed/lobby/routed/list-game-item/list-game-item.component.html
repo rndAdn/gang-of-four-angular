@@ -1,0 +1,25 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        game : {{game.id}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <span class="space">Status : {{game.gameStatus}}</span>
+        <span class="space">Created : {{game.created}}</span>
+        <span class="space">Next player : {{game.nextPlayer.userName}}</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ul>
+      <li *ngFor="let player of game.players">
+        <img mat-card-avatar class="avatar"  src="{{player.profilePicture}}"/>
+        <span class="space">{{player.userName}}</span>
+        <span class="space">Card left : {{player.cardLeft}}</span>
+        <span class="space">Turn : {{player.turn}}</span>
+      </li>
+    </ul>
+
+    <div *ngIf="playable"><button mat-raised-button color="primary" routerLink="/game/{{game.id}}/player/{{currentUser.id}}">Play</button></div>
+    <div *ngIf="joinable"><button mat-raised-button color="primary" (click)="joinGame()">Join</button></div>
+  </mat-expansion-panel>
+</mat-accordion>

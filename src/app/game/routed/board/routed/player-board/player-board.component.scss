@@ -1,0 +1,18 @@
+.player-card{
+  display: inline-block;
+  width: 3.3em;
+  height: 4.6em;
+}
+mat-card.player-mat-card{
+/*  padding-top: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;*/
+  /*width: calc(100%);*/
+  /*height: calc(100% - 70px);*/
+  /*box-sizing: border-box;*/
+}
+
+mat-grid-tile figure {
+  align-items: flex-start!important;
+}

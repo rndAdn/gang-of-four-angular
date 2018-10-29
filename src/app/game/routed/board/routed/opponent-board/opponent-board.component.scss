@@ -1,0 +1,28 @@
+.player-card {
+  display: inline-block;
+  width: 2.3em;
+  height: 4.6em;
+}
+
+.player-card-rotate{
+  display: block;
+  width: 1.3em;
+  height: 2.6em;
+}
+
+img.card-img {
+  position: relative;
+}
+
+.card-img-rotate{
+  position: relative;
+  transform: rotate(90deg);
+}
+
+/*mat-card{
+  width: calc(100%);
+  height: calc(100%);
+  !*
+  box-sizing: border-box;
+  *!
+}*/

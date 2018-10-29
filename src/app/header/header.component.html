@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" >
+  <div>
+     <button mat-button (click)="goToLobby()" *ngIf="currentUser">Gang of Four</button>
+  </div>
+  <div *ngIf="currentUser">
+    <a (click)="goToLobby()"> <img mat-card-avatar src="{{currentUser.profilePicture}}" class = "example-card"/></a>
+    <button mat-button (click)="onLogout()">Logout</button>
+  </div>
+  <button mat-button routerLink="login" *ngIf="!currentUser">Login</button>
+</mat-toolbar>
